@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Bài 1</h1>
+<p>Nhập vào tuổi trong biến age, in ra 'Đủ tuổi' nếu age>18</p>
+<span>Age:</span><input type="text" id="age">
+<button onclick="submit1()">Submit</button>
+<p id="result1"></p>
+<h1>Bài 2</h1>
+<p>Nhập và a, in ra 'Hello' nếu a chẵn, 'Hi' nếu a lẻ</p>
+<span>a:</span><input type="text" id="a2">
+<button onclick="submit2()">Submit</button>
+<p id="result2"></p>
+<h1>Bài 3</h1>
+<p>Nhập vào a, b. Nếu a>b in ra tổng, nếu a < b in ra tích, nếu a = b in ra 'Hihi'</p>
+<span>a:</span><input type="text" id="a3"><br>
+<span>b:</span><input type="text" id="b3"><br>
+<button onclick="submit3()">Submit</button>
+<p id="result3"></p>
+<h1>Bài 4</h1>
+<p>Nhập a,b,c. In ra số lớn nhất</p>
+<span>a:</span><input type="text" id="a4"><br>
+<span>b:</span><input type="text" id="b4"><br>
+<span>c:</span><input type="text" id="c4"><br>
+<button onclick="submit4()">Submit</button>
+<p id="result4"></p>
+</body>
+<script>
+    //Nhập vào tuổi trong biến age, in ra 'Đủ tuổi' nếu age>18
+    function submit1() {
+        let age = +document.getElementById('age').value;
+        if (age > 18) {
+            document.getElementById('result1').innerHTML = 'Đủ tuổi';
+        } else {
+            document.getElementById('result1').innerHTML = ' Không đủ tuổi';
+        }
+    }
+
+    //Nhập và a, in ra 'Hello' nếu a chẵn, 'Hi' nếu a lẻ
+    function submit2() {
+        let a = +document.getElementById('a2').value;
+        if (a % 2 == 0) {
+            document.getElementById('result2').innerHTML = "Hello";
+        } else {
+            document.getElementById('result2').innerHTML = "Hi";
+        }
+    }
+
+    //Nhập vào a, b. Nếu a>b in ra tổng, nếu a<b in ra tích, nếu a =b in ra 'Hihi'
+    function submit3() {
+        let a = +document.getElementById('a3').value;
+        let b = +document.getElementById('b3').value;
+        if (a > b) {
+            document.getElementById('result3').innerHTML = a + b;
+        } else if (a < b) {
+            document.getElementById('result3').innerHTML = a * b;
+        } else if (a = b) {
+            document.getElementById('result3').innerHTML = 'Hihi';
+        }
+    }
+
+    //Nhập a,b,c. In ra số lớn nhất
+    function submit4() {
+        let a = +document.getElementById('a4').value;
+        let b = +document.getElementById('b4').value;
+        let c = +document.getElementById('c4').value;
+        if (a > b) {
+            if (a > c) {
+                document.getElementById('result4').innerHTML = a;
+            } else {
+                document.getElementById('result4').innerHTML = c;
+            }
+        } else if (b > a) {
+            if (b > c) {
+                document.getElementById('result4').innerHTML = b;
+            } else {
+                document.getElementById('result4').innerHTML = c;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Đăng nhập</h1>
+<table>
+    <tr>
+        <td>Tên đăng nhập:</td>
+        <td><input type="text" id="UserName"></td>
+    </tr>
+    <tr>
+        <td>Mật khẩu:</td>
+        <td><input type="password" id="Password"></td>
+    </tr>
+</table>
+<button onclick="Login()">Login</button>
+<p id="Request"></p>
+</body>
+<script>
+    function Login() {
+        let userName = document.getElementById('UserName').value;
+        let password = document.getElementById('Password').value;
+        if (userName === "admin") {
+            document.getElementById('Request').innerHTML = 'nhập mật khẩu';
+            if (password === 'TheMaster') {
+                document.getElementById('Request').innerHTML = 'Welcome';
+            } else if (password == null) {
+                document.getElementById('Request').innerHTML = 'Canceled';
+            } else {
+                document.getElementById('Request').innerHTML = 'Wrong password';
+            }
+        } else if (userName == null) {
+            document.getElementById('Request').innerHTML = 'Canceled';
+        } else {
+            document.getElementById('Request').innerHTML = 'I don’t know you';
+        }
+    }
+
+</script>
+</html>
